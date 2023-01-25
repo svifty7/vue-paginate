@@ -15,7 +15,9 @@ jobs:
     uses: ./.github/workflows/lint.yml
 
   deploy:
+    name: Deploy GitHub Pages
     runs-on: ubuntu-latest
+    needs: lint
     steps:
       - uses: actions/checkout@v3
         with:
