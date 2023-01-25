@@ -1,0 +1,43 @@
+name: "CodeQL"
+
+on:
+  pull_request:
+    types:
+      - opened
+      - ready_for_review
+      - reopened
+      - synchronize
+
+    branches:
+      - main
+      - dev
+
+concurrency:
+  group: CodeQL-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  analyze:
+    name: Analyze
+    if: ${{ !github.event.pull_request.draft }}
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: github/codeql-action/init@v2
+        with:
+          languages: javascript
+          # CodeQL supports [ 'cpp', 'csharp', 'go', 'java', 'javascript', 'python', 'ruby' ]
+          # Learn more about CodeQL language support at https://git.io/codeql-language-support
+
+      - uses: github/codeql-action/autobuild@v2
+
+      - uses: github/codeql-action/analyze@v2
+        with:
+          skip-queries: true
+          upload: false
