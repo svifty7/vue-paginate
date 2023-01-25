@@ -1,7 +1,7 @@
 # vue-paginate
-A Vue 3 component to make pagination. Fork of [vuejs-paginate](https://github.com/lokyoung/vuejs-paginate).
+Vue 3 component to make pagination. Fork of [vuejs-paginate](https://github.com/lokyoung/vuejs-paginate).
 
-Easy to use by providing simple api. And you can customize the style of this component by css.
+Easy to use by providing simple api, and you can customize the style of this component by CSS.
 
 <VuePaginatePreview />
 
@@ -15,7 +15,7 @@ Easy to use by providing simple api. And you can customize the style of this com
   }
 </script>
 
-::: details Preview component code
+::: details Demo code
 ```vue
 <template>
   <div>
@@ -105,7 +105,7 @@ Install the npm package.
 npm install vue-paginate --save
 ```
 
-Register the component.
+Register the component
 ```js
 import { createApp } from 'vue';
 import VuePaginate from 'vue-paginate';
@@ -115,13 +115,17 @@ const app = createApp();
 app.component('vue-paginate', VuePaginate);
 ```
 
-## Usage
-
-### Basic Usage
+or use directly in component
 ```vue
-<vue-paginate :page-count="20" />
-```
+<template>
+  <vue-paginate :page-count="20" />
+</template>
 
+<script setup>
+  import VuePaginate from 'vue-paginate';
+</script>
+```
+## Usage
 ### Example
 ```vue
 <template>

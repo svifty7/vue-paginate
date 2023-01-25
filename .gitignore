@@ -15,6 +15,7 @@ coverage
 *.local
 /dist
 /public_html
+/docs/.vitepress/cache
 
 /cypress/videos/
 /cypress/screenshots/
