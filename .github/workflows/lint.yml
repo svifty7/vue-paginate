@@ -1,0 +1,34 @@
+name: Lint
+
+on:
+  workflow_call:
+
+permissions:
+  deployments: write
+  contents: read
+  pages: write
+  actions: write
+  id-token: write
+
+concurrency:
+  group: lint-${{ github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    name: Lint Job
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: 'npm'
+          cache-dependency-path: '**/package-lock.json'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint application
+        run: npm run lint:fix
