@@ -25,18 +25,6 @@ jobs:
         with:
           fetch-depth: 0
 
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-          cache: 'npm'
-          cache-dependency-path: '**/package-lock.json'
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build
-        run: npm run build
-
       - uses: ncipollo/release-action@v1
         with:
-          artifacts: "dist/vue-paginate.css,dist/vue-paginate.js,dist/vue-paginate.umd.cjs"
+          artifacts: "dist/vue-paginate.css,dist/vue-paginate.es.js,dist/vue-paginate.umd.js,dist/main.d.ts,dist/VuePaginate.d.ts"
