@@ -1,1 +1,8 @@
 /dist
+logs
+node_modules
+.vscode
+.idea
+.fleet
+/docs/.vitepress/cache
+/docs/.vitepress/dist
