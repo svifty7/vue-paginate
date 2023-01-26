@@ -1,4 +1,4 @@
-import { defineComponent as H, ref as E, computed as g, onBeforeUpdate as I, openBlock as u, createElementBlock as d, normalizeClass as a, createElementVNode as w, withKeys as k, renderSlot as v, createTextVNode as f, toDisplayString as r, createCommentVNode as c, Fragment as N, renderList as F, unref as S } from "vue";
+import { defineComponent as H, ref as E, computed as g, onBeforeUpdate as I, openBlock as u, createElementBlock as d, normalizeClass as a, createElementVNode as w, withKeys as k, renderSlot as v, createTextVNode as f, toDisplayString as r, createCommentVNode as y, Fragment as N, renderList as F, unref as S } from "vue";
 const z = ["tabindex"], D = ["tabindex"], M = ["onClick", "onKeyup"], O = ["tabindex"], U = ["tabindex"], j = ["onClick", "onKeyup"], q = /* @__PURE__ */ H({
   __name: "VuePaginate",
   props: {
@@ -14,55 +14,23 @@ const z = ["tabindex"], D = ["tabindex"], M = ["onClick", "onKeyup"], O = ["tabi
     breakViewClass: null,
     breakViewLinkClass: null,
     pageCount: null,
-    clickHandler: {
-      type: Function,
-      default: () => {
-      }
-    },
-    pageRange: {
-      default: 3
-    },
-    marginPages: {
-      default: 1
-    },
-    prevText: {
-      default: "Prev"
-    },
-    nextText: {
-      default: "Next"
-    },
-    breakViewText: {
-      default: "…"
-    },
-    activeClass: {
-      default: "active"
-    },
-    disabledClass: {
-      default: "disabled"
-    },
-    noLiSurround: {
-      type: Boolean,
-      default: !1
-    },
-    firstLastButton: {
-      type: Boolean,
-      default: !1
-    },
-    firstButtonText: {
-      default: "First"
-    },
-    lastButtonText: {
-      default: "Last"
-    },
-    hidePrevNext: {
-      type: Boolean,
-      default: !1
-    }
+    clickHandler: { type: Function, default: () => {
+    } },
+    pageRange: { default: 3 },
+    marginPages: { default: 1 },
+    prevText: { default: "Prev" },
+    nextText: { default: "Next" },
+    breakViewText: { default: "…" },
+    activeClass: { default: "active" },
+    disabledClass: { default: "disabled" },
+    noLiSurround: { type: Boolean, default: !1 },
+    firstLastButton: { type: Boolean, default: !1 },
+    firstButtonText: { default: "First" },
+    lastButtonText: { default: "Last" },
+    hidePrevNext: { type: Boolean, default: !1 }
   },
   emits: ["update:modelValue"],
-  setup(t, {
-    emit: K
-  }) {
+  setup(t, { emit: K }) {
     const l = t, P = E(1), o = g({
       get: () => l.modelValue || P.value,
       set: (s) => {
@@ -110,7 +78,7 @@ const z = ["tabindex"], D = ["tabindex"], M = ["onClick", "onKeyup"], O = ["tabi
       o.value <= 1 || x(o.value - 1);
     }, m = () => {
       o.value >= l.pageCount || x(o.value + 1);
-    }, b = () => o.value === 1, y = () => o.value === l.pageCount || l.pageCount === 0, B = () => {
+    }, b = () => o.value === 1, c = () => o.value === l.pageCount || l.pageCount === 0, B = () => {
       o.value <= 1 || x(1);
     }, T = () => {
       o.value >= l.pageCount || x(l.pageCount);
@@ -120,99 +88,166 @@ const z = ["tabindex"], D = ["tabindex"], M = ["onClick", "onKeyup"], O = ["tabi
     }), (s, n) => t.noLiSurround ? (u(), d("div", {
       key: 1,
       class: a(t.containerClass)
-    }, [t.firstLastButton ? (u(), d("a", {
-      key: 0,
-      class: a([t.pageLinkClass, b() ? t.disabledClass : ""]),
-      tabindex: "0",
-      onClick: n[8] || (n[8] = (e) => B()),
-      onKeyup: n[9] || (n[9] = k((e) => B(), ["enter"]))
-    }, [v(s.$slots, "firstBtnText", {}, () => [f(r(t.firstButtonText), 1)], !0)], 34)) : c("", !0), b() && t.hidePrevNext ? c("", !0) : (u(), d("a", {
-      key: 1,
-      class: a([t.prevLinkClass, b() ? t.disabledClass : ""]),
-      tabindex: "0",
-      onClick: n[10] || (n[10] = (e) => V()),
-      onKeyup: n[11] || (n[11] = k((e) => V(), ["enter"]))
-    }, [v(s.$slots, "prevBtnText", {}, () => [f(r(t.prevText), 1)], !0)], 34)), (u(!0), d(N, null, F(S(R), (e, L) => (u(), d(N, {
-      key: L
-    }, [e != null && e.breakView ? (u(), d("a", {
-      key: 0,
-      class: a([t.pageLinkClass, t.breakViewLinkClass, e != null && e.disabled ? t.disabledClass : ""]),
-      tabindex: "0"
-    }, [v(s.$slots, "breakViewContent", {}, () => [f(r(t.breakViewText), 1)], !0)], 2)) : e != null && e.disabled ? (u(), d("a", {
-      key: 1,
-      class: a([t.pageLinkClass, e != null && e.selected ? t.activeClass : "", t.disabledClass]),
-      tabindex: "0"
-    }, r(e == null ? void 0 : e.content), 3)) : (u(), d("a", {
-      key: 2,
-      class: a([t.pageLinkClass, e != null && e.selected ? t.activeClass : ""]),
-      tabindex: "0",
-      onClick: (C) => x(e.index + 1),
-      onKeyup: k((C) => x(e.index + 1), ["enter"])
-    }, r(e == null ? void 0 : e.content), 43, j))], 64))), 128)), y() && t.hidePrevNext ? c("", !0) : (u(), d("a", {
-      key: 2,
-      class: a([t.nextLinkClass, y() ? t.disabledClass : ""]),
-      tabindex: "0",
-      onClick: n[12] || (n[12] = (e) => m()),
-      onKeyup: n[13] || (n[13] = k((e) => m(), ["enter"]))
-    }, [v(s.$slots, "nextBtnText", {}, () => [f(r(t.nextText), 1)], !0)], 34)), t.firstLastButton ? (u(), d("a", {
-      key: 3,
-      class: a([t.pageLinkClass, y() ? t.disabledClass : ""]),
-      tabindex: "0",
-      onClick: n[14] || (n[14] = (e) => T()),
-      onKeyup: n[15] || (n[15] = k((e) => T(), ["enter"]))
-    }, [v(s.$slots, "lastBtnText", {}, () => [f(r(t.lastButtonText), 1)], !0)], 34)) : c("", !0)], 2)) : (u(), d("ul", {
+    }, [
+      t.firstLastButton ? (u(), d("a", {
+        key: 0,
+        class: a([t.pageLinkClass, b() ? t.disabledClass : ""]),
+        tabindex: "0",
+        onClick: n[8] || (n[8] = (e) => B()),
+        onKeyup: n[9] || (n[9] = k((e) => B(), ["enter"]))
+      }, [
+        v(s.$slots, "firstBtnText", {}, () => [
+          f(r(t.firstButtonText), 1)
+        ], !0)
+      ], 34)) : y("", !0),
+      b() && t.hidePrevNext ? y("", !0) : (u(), d("a", {
+        key: 1,
+        class: a([t.prevLinkClass, b() ? t.disabledClass : ""]),
+        tabindex: "0",
+        onClick: n[10] || (n[10] = (e) => V()),
+        onKeyup: n[11] || (n[11] = k((e) => V(), ["enter"]))
+      }, [
+        v(s.$slots, "prevBtnText", {}, () => [
+          f(r(t.prevText), 1)
+        ], !0)
+      ], 34)),
+      (u(!0), d(N, null, F(S(R), (e, L) => (u(), d(N, { key: L }, [
+        e != null && e.breakView ? (u(), d("a", {
+          key: 0,
+          class: a([t.pageLinkClass, t.breakViewLinkClass, e != null && e.disabled ? t.disabledClass : ""]),
+          tabindex: "0"
+        }, [
+          v(s.$slots, "breakViewContent", {}, () => [
+            f(r(t.breakViewText), 1)
+          ], !0)
+        ], 2)) : e != null && e.disabled ? (u(), d("a", {
+          key: 1,
+          class: a([t.pageLinkClass, e != null && e.selected ? t.activeClass : "", t.disabledClass]),
+          tabindex: "0"
+        }, r(e == null ? void 0 : e.content), 3)) : (u(), d("a", {
+          key: 2,
+          class: a([t.pageLinkClass, e != null && e.selected ? t.activeClass : ""]),
+          tabindex: "0",
+          onClick: (C) => x(e.index + 1),
+          onKeyup: k((C) => x(e.index + 1), ["enter"])
+        }, r(e == null ? void 0 : e.content), 43, j))
+      ], 64))), 128)),
+      c() && t.hidePrevNext ? y("", !0) : (u(), d("a", {
+        key: 2,
+        class: a([t.nextLinkClass, c() ? t.disabledClass : ""]),
+        tabindex: "0",
+        onClick: n[12] || (n[12] = (e) => m()),
+        onKeyup: n[13] || (n[13] = k((e) => m(), ["enter"]))
+      }, [
+        v(s.$slots, "nextBtnText", {}, () => [
+          f(r(t.nextText), 1)
+        ], !0)
+      ], 34)),
+      t.firstLastButton ? (u(), d("a", {
+        key: 3,
+        class: a([t.pageLinkClass, c() ? t.disabledClass : ""]),
+        tabindex: "0",
+        onClick: n[14] || (n[14] = (e) => T()),
+        onKeyup: n[15] || (n[15] = k((e) => T(), ["enter"]))
+      }, [
+        v(s.$slots, "lastBtnText", {}, () => [
+          f(r(t.lastButtonText), 1)
+        ], !0)
+      ], 34)) : y("", !0)
+    ], 2)) : (u(), d("ul", {
       key: 0,
       class: a(t.containerClass)
-    }, [t.firstLastButton ? (u(), d("li", {
-      key: 0,
-      class: a([t.pageClass, b() ? t.disabledClass : ""])
-    }, [w("a", {
-      class: a(t.pageLinkClass),
-      tabindex: b() ? -1 : 0,
-      onClick: n[0] || (n[0] = (e) => B()),
-      onKeyup: n[1] || (n[1] = k((e) => B(), ["enter"]))
-    }, [v(s.$slots, "firstBtnText", {}, () => [f(r(t.firstButtonText), 1)], !0)], 42, z)], 2)) : c("", !0), b() && t.hidePrevNext ? c("", !0) : (u(), d("li", {
-      key: 1,
-      class: a([t.prevClass, b() ? t.disabledClass : ""])
-    }, [w("a", {
-      class: a(t.prevLinkClass),
-      tabindex: b() ? -1 : 0,
-      onClick: n[2] || (n[2] = (e) => V()),
-      onKeyup: n[3] || (n[3] = k((e) => V(), ["enter"]))
-    }, [v(s.$slots, "prevBtnText", {}, () => [f(r(t.prevText), 1)], !0)], 42, D)], 2)), (u(!0), d(N, null, F(S(R), (e, L) => (u(), d("li", {
-      key: L,
-      class: a([t.pageClass, e != null && e.selected ? t.activeClass : "", e != null && e.disabled ? t.disabledClass : "", e != null && e.breakView ? t.breakViewClass : ""])
-    }, [e != null && e.breakView ? (u(), d("a", {
-      key: 0,
-      class: a([t.pageLinkClass, t.breakViewLinkClass]),
-      tabindex: "0"
-    }, [v(s.$slots, "breakViewContent", {}, () => [f(r(t.breakViewText), 1)], !0)], 2)) : e != null && e.disabled ? (u(), d("a", {
-      key: 1,
-      class: a(t.pageLinkClass),
-      tabindex: "0"
-    }, r(e == null ? void 0 : e.content), 3)) : (u(), d("a", {
-      key: 2,
-      class: a(t.pageLinkClass),
-      tabindex: "0",
-      onClick: (C) => x(e.index + 1),
-      onKeyup: k((C) => x(e.index + 1), ["enter"])
-    }, r(e == null ? void 0 : e.content), 43, M))], 2))), 128)), y() && t.hidePrevNext ? c("", !0) : (u(), d("li", {
-      key: 2,
-      class: a([t.nextClass, y() ? t.disabledClass : ""])
-    }, [w("a", {
-      class: a(t.nextLinkClass),
-      tabindex: y() ? -1 : 0,
-      onClick: n[4] || (n[4] = (e) => m()),
-      onKeyup: n[5] || (n[5] = k((e) => m(), ["enter"]))
-    }, [v(s.$slots, "nextBtnText", {}, () => [f(r(t.nextText), 1)], !0)], 42, O)], 2)), t.firstLastButton ? (u(), d("li", {
-      key: 3,
-      class: a([t.pageClass, y() ? t.disabledClass : ""])
-    }, [w("a", {
-      class: a(t.pageLinkClass),
-      tabindex: y() ? -1 : 0,
-      onClick: n[6] || (n[6] = (e) => T()),
-      onKeyup: n[7] || (n[7] = k((e) => T(), ["enter"]))
-    }, [v(s.$slots, "lastBtnText", {}, () => [f(r(t.lastButtonText), 1)], !0)], 42, U)], 2)) : c("", !0)], 2));
+    }, [
+      t.firstLastButton ? (u(), d("li", {
+        key: 0,
+        class: a([t.pageClass, b() ? t.disabledClass : ""])
+      }, [
+        w("a", {
+          class: a(t.pageLinkClass),
+          tabindex: b() ? -1 : 0,
+          onClick: n[0] || (n[0] = (e) => B()),
+          onKeyup: n[1] || (n[1] = k((e) => B(), ["enter"]))
+        }, [
+          v(s.$slots, "firstBtnText", {}, () => [
+            f(r(t.firstButtonText), 1)
+          ], !0)
+        ], 42, z)
+      ], 2)) : y("", !0),
+      b() && t.hidePrevNext ? y("", !0) : (u(), d("li", {
+        key: 1,
+        class: a([t.prevClass, b() ? t.disabledClass : ""])
+      }, [
+        w("a", {
+          class: a(t.prevLinkClass),
+          tabindex: b() ? -1 : 0,
+          onClick: n[2] || (n[2] = (e) => V()),
+          onKeyup: n[3] || (n[3] = k((e) => V(), ["enter"]))
+        }, [
+          v(s.$slots, "prevBtnText", {}, () => [
+            f(r(t.prevText), 1)
+          ], !0)
+        ], 42, D)
+      ], 2)),
+      (u(!0), d(N, null, F(S(R), (e, L) => (u(), d("li", {
+        key: L,
+        class: a([
+          t.pageClass,
+          e != null && e.selected ? t.activeClass : "",
+          e != null && e.disabled ? t.disabledClass : "",
+          e != null && e.breakView ? t.breakViewClass : ""
+        ])
+      }, [
+        e != null && e.breakView ? (u(), d("a", {
+          key: 0,
+          class: a([t.pageLinkClass, t.breakViewLinkClass]),
+          tabindex: "0"
+        }, [
+          v(s.$slots, "breakViewContent", {}, () => [
+            f(r(t.breakViewText), 1)
+          ], !0)
+        ], 2)) : e != null && e.disabled ? (u(), d("a", {
+          key: 1,
+          class: a(t.pageLinkClass),
+          tabindex: "0"
+        }, r(e == null ? void 0 : e.content), 3)) : (u(), d("a", {
+          key: 2,
+          class: a(t.pageLinkClass),
+          tabindex: "0",
+          onClick: (C) => x(e.index + 1),
+          onKeyup: k((C) => x(e.index + 1), ["enter"])
+        }, r(e == null ? void 0 : e.content), 43, M))
+      ], 2))), 128)),
+      c() && t.hidePrevNext ? y("", !0) : (u(), d("li", {
+        key: 2,
+        class: a([t.nextClass, c() ? t.disabledClass : ""])
+      }, [
+        w("a", {
+          class: a(t.nextLinkClass),
+          tabindex: c() ? -1 : 0,
+          onClick: n[4] || (n[4] = (e) => m()),
+          onKeyup: n[5] || (n[5] = k((e) => m(), ["enter"]))
+        }, [
+          v(s.$slots, "nextBtnText", {}, () => [
+            f(r(t.nextText), 1)
+          ], !0)
+        ], 42, O)
+      ], 2)),
+      t.firstLastButton ? (u(), d("li", {
+        key: 3,
+        class: a([t.pageClass, c() ? t.disabledClass : ""])
+      }, [
+        w("a", {
+          class: a(t.pageLinkClass),
+          tabindex: c() ? -1 : 0,
+          onClick: n[6] || (n[6] = (e) => T()),
+          onKeyup: n[7] || (n[7] = k((e) => T(), ["enter"]))
+        }, [
+          v(s.$slots, "lastBtnText", {}, () => [
+            f(r(t.lastButtonText), 1)
+          ], !0)
+        ], 42, U)
+      ], 2)) : y("", !0)
+    ], 2));
   }
 });
 const A = (t, K) => {
@@ -220,7 +255,7 @@ const A = (t, K) => {
   for (const [P, o] of K)
     l[P] = o;
   return l;
-}, G = /* @__PURE__ */ A(q, [["__scopeId", "data-v-a21110e0"]]), Q = {
+}, G = /* @__PURE__ */ A(q, [["__scopeId", "data-v-b3ff0c92"]]), Q = {
   install: (t) => {
     t.component("VuePaginate", G);
   }

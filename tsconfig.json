@@ -14,7 +14,7 @@
       "@/*": ["./src/*"]
     },
     "typeRoots": [
-      "./src/shims-vue.d.ts",
+      "./src/vite-env.d.ts",
       "./node_modules/@types"
     ]
   },
@@ -22,9 +22,5 @@
   "include": [
     "vite.config.*",
     "src/**/*",
-    "src/**/*.vue",
-    "src/**/*.ts",
-    "src/**/*.d.ts",
-    "src/**/*.tsx"
   ]
 }

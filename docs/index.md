@@ -58,7 +58,7 @@ Easy to use by providing simple api, and you can customize the style of this com
   <div>Current page: <b>{{ page }}</b></div>
 </template>
 
-<script lang="tsx">
+<script lang="ts">
   import { defineComponent, ref } from 'vue';
   import VuePaginate from '@svifty7/vue-paginate';
 
