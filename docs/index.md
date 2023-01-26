@@ -60,7 +60,7 @@ Easy to use by providing simple api, and you can customize the style of this com
 
 <script lang="tsx">
   import { defineComponent, ref } from 'vue';
-  import VuePaginate from 'vue-paginate';
+  import VuePaginate from '@svifty7/vue-paginate';
 
   export default defineComponent({
     components: {
@@ -76,21 +76,17 @@ Easy to use by providing simple api, and you can customize the style of this com
   });
 </script>
 
-<style lang="scss">
+<style>
   @import "https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/components/menu.min.css";
 
-  .ui {
-    &.pagination {
-      &.menu {
-        background: var(--vp-c-text-1);
+  .ui.pagination.menu {
+    background: var(--vp-c-text-1);
+  }
 
-        .item,
-        .item.active,
-        .item:hover {
-          color: var(--vp-c-bg);
-        }
-      }
-    }
+  .ui.pagination.menu .item,
+  .ui.pagination.menu .item.active,
+  .ui.pagination.menu .item:hover {
+    color: var(--vp-c-bg);
   }
 </style>
 ```
@@ -108,7 +104,7 @@ npm install vue-paginate --save
 Register the component
 ```js
 import { createApp } from 'vue';
-import VuePaginate from 'vue-paginate';
+import VuePaginate from '@svifty7/vue-paginate';
 
 const app = createApp();
 
@@ -122,7 +118,7 @@ or use directly in component
 </template>
 
 <script setup>
-  import VuePaginate from 'vue-paginate';
+  import VuePaginate from '@svifty7/vue-paginate';
 </script>
 ```
 ## Usage
@@ -145,7 +141,7 @@ or use directly in component
 
 <script>
   import { defineComponent, ref } from 'vue';
-  import VuePaginate from 'vue-paginate';
+  import VuePaginate from '@svifty7/vue-paginate';
   
   export default defineComponent({
     components: {
@@ -180,7 +176,7 @@ Use `v-model` to set the selected page number. You can programmatically modify t
 
 <script>
   import { defineComponent, ref } from 'vue';
-  import VuePaginate from 'vue-paginate';
+  import VuePaginate from '@svifty7/vue-paginate';
 
   export default defineComponent({
     components: {
@@ -268,7 +264,7 @@ You can customize the inner HTML of the first page button, previous page button,
 
 <script>
   import { defineComponent, ref } from 'vue';
-  import VuePaginate from 'vue-paginate';
+  import VuePaginate from '@svifty7/vue-paginate';
 
   export default defineComponent({
     components: {

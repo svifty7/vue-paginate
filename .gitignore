@@ -9,17 +9,6 @@ lerna-debug.log*
 
 node_modules
 .DS_Store
-dist
-dist-ssr
-coverage
-*.local
-/dist
-/public_html
-/docs/.vitepress/cache
-/docs/.vitepress/dist
-
-/cypress/videos/
-/cypress/screenshots/
 
 # Editor directories and files
 .vscode
@@ -34,5 +23,16 @@ coverage
 
 # local env files
 .env
-.env.local
-.env.*.local
+*.local
+
+# Build
+dist/*
+!dist/main.d.ts
+!dist/VuePaginate.d.ts
+!dist/vue-paginate.css
+!dist/vue-paginate.es.js
+!dist/vue-paginate.umd.js
+
+# VitePress
+/docs/.vitepress/cache
+/docs/.vitepress/dist

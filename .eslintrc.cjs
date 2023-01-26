@@ -30,8 +30,6 @@ module.exports = {
     }
   },
 
-  ignorePatterns: ['./public_html/*', './dist/*'],
-
   rules: {
     'no-console': process.env.NODE_ENV === 'production'
       ? [
