@@ -39,7 +39,7 @@
   <div>Current page: <b>{{ page }}</b></div>
 </template>
 
-<script lang="tsx">
+<script lang="ts">
   import { defineComponent, ref } from 'vue';
   import VuePaginate from '../../../src/VuePaginate.vue';
 

@@ -192,7 +192,7 @@
   </div>
 </template>
 
-<script lang="tsx" setup>
+<script lang="ts" setup>
   import {
     computed, onBeforeUpdate, ref
   } from 'vue';
