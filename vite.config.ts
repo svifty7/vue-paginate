@@ -5,6 +5,7 @@ import * as path from 'path';
 
 // https://vitejs.dev/config/
 export default () => defineConfig({
+  publicDir: false,
   plugins: [
     vue(),
     dts({
@@ -12,14 +13,15 @@ export default () => defineConfig({
       staticImport: true,
       insertTypesEntry: true,
       cleanVueFileName: true,
-      include: ['./src/main.ts', './src/VuePaginate.vue']
+      include: ['./src/index.ts', './src/VuePaginate.vue']
     })
   ],
   build: {
-    cssCodeSplit: true,
+    sourcemap: true,
+    target: 'es2015',
     rollupOptions: {
       input: {
-        main: path.resolve(__dirname, 'src/main.ts')
+        main: path.resolve(__dirname, 'src/index.ts')
       },
 
       // @ts-ignore
@@ -27,17 +29,12 @@ export default () => defineConfig({
         globals: {
           vue: 'Vue'
         },
-        exports: 'named',
-        assetFileNames: assetInfo => {
-          if (assetInfo.name === 'main.css') return 'vue-paginate.css';
-
-          return assetInfo.name;
-        }
+        exports: 'named'
       },
       external: ['vue']
     },
     lib: {
-      entry: path.resolve(__dirname, '/src/main.ts'),
+      entry: path.resolve(__dirname, '/src/index.ts'),
       fileName: format => `vue-paginate.${ format }.js`,
       name: 'VuePaginate',
       formats: [

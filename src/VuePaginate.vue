@@ -384,10 +384,3 @@
     }
   });
 </script>
-
-<style scoped>
-  a {
-    cursor: pointer;
-    user-select: none;
-  }
-</style>

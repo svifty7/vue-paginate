@@ -34,9 +34,12 @@ node_modules
 
 # Build
 dist/*
-!dist/vue-paginate.css
-!dist/vue-paginate.es.js
-!dist/vue-paginate.cjs.js
-!dist/vue-paginate.umd.js
+!dist/vue-paginate.es.js*
+!dist/vue-paginate.cjs.js*
+!dist/vue-paginate.umd.js*
+
+# Types
+types/*
+!types/*.d.ts
 
 

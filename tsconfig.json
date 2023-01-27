@@ -1,5 +1,14 @@
 {
   "compilerOptions": {
+    "target": "es2015",
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "lib": [
+      "ES2016",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "esModuleInterop": true,
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
@@ -10,6 +19,7 @@
     "composite": true,
     "types": ["node"],
     "baseUrl": ".",
+    "strict": true,
     "paths": {
       "@/*": ["./src/*"]
     },
@@ -22,5 +32,7 @@
   "include": [
     "vite.config.*",
     "src/**/*",
+    "src/**/*.ts",
+    "src/**/*.vue"
   ]
 }

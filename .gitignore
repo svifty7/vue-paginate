@@ -7,6 +7,8 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+dist
+types
 node_modules
 .DS_Store
 
@@ -24,15 +26,6 @@ node_modules
 # local env files
 .env
 *.local
-
-# Build
-dist/*
-!dist/main.d.ts
-!dist/VuePaginate.d.ts
-!dist/vue-paginate.css
-!dist/vue-paginate.es.js
-!dist/vue-paginate.cjs.js
-!dist/vue-paginate.umd.js
 
 # VitePress
 /docs/.vitepress/cache

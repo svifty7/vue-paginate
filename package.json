@@ -26,14 +26,9 @@
       "import": "./dist/vue-paginate.es.js",
       "require": "./dist/vue-paginate.cjs.js",
       "browser": "./dist/vue-paginate.umd.js"
-    },
-    "./dist/vue-paginate.css": {
-      "import": "./dist/vue-paginate.css",
-      "require": "./dist/vue-paginate.css",
-      "browser": "./dist/vue-paginate.css"
     }
   },
-  "types": "./types/main.d.ts",
+  "types": "./types/index.d.ts",
   "scripts": {
     "build": "run-s type-check build-only",
     "type-check": "vue-tsc --noEmit",
