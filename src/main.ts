@@ -1,5 +1,5 @@
 import type { App, Plugin } from 'vue';
-import VuePaginate from '@/VuePaginate.vue';
+import VuePaginate from './VuePaginate.vue';
 
 const VuePaginatePlugin = Object.assign(VuePaginate, {
   install: (app: App) => {
