@@ -11,20 +11,29 @@
   ],
   "license": "MIT",
   "private": false,
+  "files": [
+    "dist",
+    "types",
+    "src",
+    "README.md",
+    "LICENSE.md"
+  ],
   "type": "module",
-  "main": "./dist/vue-paginate.umd.js",
+  "main": "./dist/vue-paginate.cjs.js",
   "module": "./dist/vue-paginate.es.js",
   "exports": {
     ".": {
       "import": "./dist/vue-paginate.es.js",
-      "require": "./dist/vue-paginate.umd.js"
+      "require": "./dist/vue-paginate.cjs.js",
+      "browser": "./dist/vue-paginate.umd.js"
     },
-    "./dist/my-library-vue-ts.css": {
+    "./dist/vue-paginate.css": {
       "import": "./dist/vue-paginate.css",
-      "require": "./dist/vue-paginate.css"
+      "require": "./dist/vue-paginate.css",
+      "browser": "./dist/vue-paginate.css"
     }
   },
-  "types": "./dist/main.d.ts",
+  "types": "./types/main.d.ts",
   "scripts": {
     "build": "run-s type-check build-only",
     "type-check": "vue-tsc --noEmit",
@@ -43,6 +52,9 @@
     "url": "https://github.com/svifty7/vue-paginate/issues"
   },
   "homepage": "https://svifty7.github.io/vue-paginate/",
+  "peerDependencies": {
+    "vue": "^3.0.0"
+  },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.1.4",
     "@types/node": "^18.11.18",

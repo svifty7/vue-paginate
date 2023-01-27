@@ -1,5 +1,5 @@
-import { defineComponent as H, ref as E, computed as R, onBeforeUpdate as I, openBlock as u, createElementBlock as d, normalizeClass as a, createElementVNode as w, withKeys as k, renderSlot as v, createTextVNode as f, toDisplayString as r, createCommentVNode as y, Fragment as g, renderList as F, unref as S } from "vue";
-const z = ["tabindex"], D = ["tabindex"], M = ["onClick", "onKeyup"], O = ["tabindex"], U = ["tabindex"], j = ["onClick", "onKeyup"], q = /* @__PURE__ */ H({
+import { defineComponent as E, ref as I, computed as F, onBeforeUpdate as O, openBlock as u, createElementBlock as d, normalizeClass as a, createElementVNode as w, withKeys as k, renderSlot as v, createTextVNode as f, toDisplayString as r, createCommentVNode as y, Fragment as g, renderList as S, unref as H } from "vue";
+const j = ["tabindex"], z = ["tabindex"], D = ["onClick", "onKeyup"], M = ["tabindex"], U = ["tabindex"], q = ["onClick", "onKeyup"], A = /* @__PURE__ */ E({
   __name: "VuePaginate",
   props: {
     modelValue: null,
@@ -31,12 +31,12 @@ const z = ["tabindex"], D = ["tabindex"], M = ["onClick", "onKeyup"], O = ["tabi
   },
   emits: ["update:modelValue"],
   setup(t, { emit: K }) {
-    const l = t, $ = E(1), o = R({
-      get: () => l.modelValue || $.value,
+    const l = t, P = I(1), o = F({
+      get: () => l.modelValue || P.value,
       set: (s) => {
-        $.value = s;
+        P.value = s;
       }
-    }), N = R(() => {
+    }), R = F(() => {
       const s = [];
       if (l.pageCount <= l.pageRange)
         for (let n = 0; n < l.pageCount; n++)
@@ -63,27 +63,27 @@ const z = ["tabindex"], D = ["tabindex"], M = ["onClick", "onKeyup"], O = ["tabi
           e(i);
         let C = 0;
         o.value - n > 0 && (C = o.value - 1 - n);
-        let P = C + l.pageRange - 1;
-        P >= l.pageCount && (P = l.pageCount - 1, C = P - l.pageRange + 1);
-        for (let i = C; i <= P && i <= l.pageCount - 1; i++)
+        let $ = C + l.pageRange - 1;
+        $ >= l.pageCount && ($ = l.pageCount - 1, C = $ - l.pageRange + 1);
+        for (let i = C; i <= $ && i <= l.pageCount - 1; i++)
           e(i);
-        C > l.marginPages && L(C - 1), P + 1 < l.pageCount - l.marginPages && L(P + 1);
+        C > l.marginPages && L(C - 1), $ + 1 < l.pageCount - l.marginPages && L($ + 1);
         for (let i = l.pageCount - 1; i >= l.pageCount - l.marginPages; i--)
           e(i);
       }
       return s.filter((n) => !!n);
     }), x = (s) => {
-      o.value !== s && ($.value = s, K("update:modelValue", s), l.clickHandler(s));
+      o.value !== s && (P.value = s, K("update:modelValue", s), l.clickHandler(s));
     }, V = () => {
       o.value <= 1 || x(o.value - 1);
-    }, B = () => {
+    }, m = () => {
       o.value >= l.pageCount || x(o.value + 1);
-    }, b = () => o.value === 1, c = () => o.value === l.pageCount || l.pageCount === 0, m = () => {
+    }, b = () => o.value === 1, c = () => o.value === l.pageCount || l.pageCount === 0, B = () => {
       o.value <= 1 || x(1);
     }, T = () => {
       o.value >= l.pageCount || x(l.pageCount);
     };
-    return I(() => {
+    return O(() => {
       l.forcePage !== void 0 && l.forcePage !== o.value && (o.value = l.forcePage);
     }), (s, n) => t.noLiSurround ? (u(), d("div", {
       key: 1,
@@ -93,8 +93,8 @@ const z = ["tabindex"], D = ["tabindex"], M = ["onClick", "onKeyup"], O = ["tabi
         key: 0,
         class: a([t.pageLinkClass, b() ? t.disabledClass : ""]),
         tabindex: "0",
-        onClick: n[8] || (n[8] = (e) => m()),
-        onKeyup: n[9] || (n[9] = k((e) => m(), ["enter"]))
+        onClick: n[8] || (n[8] = (e) => B()),
+        onKeyup: n[9] || (n[9] = k((e) => B(), ["enter"]))
       }, [
         v(s.$slots, "firstBtnText", {}, () => [
           f(r(t.firstButtonText), 1)
@@ -111,7 +111,7 @@ const z = ["tabindex"], D = ["tabindex"], M = ["onClick", "onKeyup"], O = ["tabi
           f(r(t.prevText), 1)
         ], !0)
       ], 34)),
-      (u(!0), d(g, null, F(S(N), (e, L) => (u(), d(g, { key: L }, [
+      (u(!0), d(g, null, S(H(R), (e, L) => (u(), d(g, { key: L }, [
         e != null && e.breakView ? (u(), d("a", {
           key: 0,
           class: a([t.pageLinkClass, t.breakViewLinkClass, e != null && e.disabled ? t.disabledClass : ""]),
@@ -130,14 +130,14 @@ const z = ["tabindex"], D = ["tabindex"], M = ["onClick", "onKeyup"], O = ["tabi
           tabindex: "0",
           onClick: (C) => x(e.index + 1),
           onKeyup: k((C) => x(e.index + 1), ["enter"])
-        }, r(e == null ? void 0 : e.content), 43, j))
+        }, r(e == null ? void 0 : e.content), 43, q))
       ], 64))), 128)),
       c() && t.hidePrevNext ? y("", !0) : (u(), d("a", {
         key: 2,
         class: a([t.nextLinkClass, c() ? t.disabledClass : ""]),
         tabindex: "0",
-        onClick: n[12] || (n[12] = (e) => B()),
-        onKeyup: n[13] || (n[13] = k((e) => B(), ["enter"]))
+        onClick: n[12] || (n[12] = (e) => m()),
+        onKeyup: n[13] || (n[13] = k((e) => m(), ["enter"]))
       }, [
         v(s.$slots, "nextBtnText", {}, () => [
           f(r(t.nextText), 1)
@@ -165,13 +165,13 @@ const z = ["tabindex"], D = ["tabindex"], M = ["onClick", "onKeyup"], O = ["tabi
         w("a", {
           class: a(t.pageLinkClass),
           tabindex: b() ? -1 : 0,
-          onClick: n[0] || (n[0] = (e) => m()),
-          onKeyup: n[1] || (n[1] = k((e) => m(), ["enter"]))
+          onClick: n[0] || (n[0] = (e) => B()),
+          onKeyup: n[1] || (n[1] = k((e) => B(), ["enter"]))
         }, [
           v(s.$slots, "firstBtnText", {}, () => [
             f(r(t.firstButtonText), 1)
           ], !0)
-        ], 42, z)
+        ], 42, j)
       ], 2)) : y("", !0),
       b() && t.hidePrevNext ? y("", !0) : (u(), d("li", {
         key: 1,
@@ -186,9 +186,9 @@ const z = ["tabindex"], D = ["tabindex"], M = ["onClick", "onKeyup"], O = ["tabi
           v(s.$slots, "prevBtnText", {}, () => [
             f(r(t.prevText), 1)
           ], !0)
-        ], 42, D)
+        ], 42, z)
       ], 2)),
-      (u(!0), d(g, null, F(S(N), (e, L) => (u(), d("li", {
+      (u(!0), d(g, null, S(H(R), (e, L) => (u(), d("li", {
         key: L,
         class: a([
           t.pageClass,
@@ -215,7 +215,7 @@ const z = ["tabindex"], D = ["tabindex"], M = ["onClick", "onKeyup"], O = ["tabi
           tabindex: "0",
           onClick: (C) => x(e.index + 1),
           onKeyup: k((C) => x(e.index + 1), ["enter"])
-        }, r(e == null ? void 0 : e.content), 43, M))
+        }, r(e == null ? void 0 : e.content), 43, D))
       ], 2))), 128)),
       c() && t.hidePrevNext ? y("", !0) : (u(), d("li", {
         key: 2,
@@ -224,13 +224,13 @@ const z = ["tabindex"], D = ["tabindex"], M = ["onClick", "onKeyup"], O = ["tabi
         w("a", {
           class: a(t.nextLinkClass),
           tabindex: c() ? -1 : 0,
-          onClick: n[4] || (n[4] = (e) => B()),
-          onKeyup: n[5] || (n[5] = k((e) => B(), ["enter"]))
+          onClick: n[4] || (n[4] = (e) => m()),
+          onKeyup: n[5] || (n[5] = k((e) => m(), ["enter"]))
         }, [
           v(s.$slots, "nextBtnText", {}, () => [
             f(r(t.nextText), 1)
           ], !0)
-        ], 42, O)
+        ], 42, M)
       ], 2)),
       t.firstLastButton ? (u(), d("li", {
         key: 3,
@@ -250,17 +250,17 @@ const z = ["tabindex"], D = ["tabindex"], M = ["onClick", "onKeyup"], O = ["tabi
     ], 2));
   }
 });
-const A = (t, K) => {
+const G = (t, K) => {
   const l = t.__vccOpts || t;
-  for (const [$, o] of K)
-    l[$] = o;
+  for (const [P, o] of K)
+    l[P] = o;
   return l;
-}, G = /* @__PURE__ */ A(q, [["__scopeId", "data-v-1cbf8445"]]), Q = {
+}, N = /* @__PURE__ */ G(A, [["__scopeId", "data-v-1cbf8445"]]), Q = Object.assign(N, {
   install: (t) => {
-    t.component("VuePaginate", G);
+    t.component(N.name, N);
   }
-};
+});
 export {
-  G as VuePaginate,
+  N as VuePaginate,
   Q as default
 };

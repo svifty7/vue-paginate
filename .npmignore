@@ -5,6 +5,8 @@
 .husky
 /docs
 
+/src/vite-env.d.ts
+
 # Logs
 *.log
 npm-debug.log*
@@ -32,10 +34,9 @@ node_modules
 
 # Build
 dist/*
-!dist/main.d.ts
-!dist/VuePaginate.d.ts
 !dist/vue-paginate.css
 !dist/vue-paginate.es.js
+!dist/vue-paginate.cjs.js
 !dist/vue-paginate.umd.js
 
 

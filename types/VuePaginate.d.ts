@@ -1,3 +1,4 @@
+import type { DefineComponent, Ref, WritableComputedRef, ComputedRef, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ExtractPropTypes } from 'vue';
 export declare type TVuePaginatePage = {
     index: number;
     content?: number;
@@ -32,7 +33,7 @@ export declare type TVuePaginateProps = {
     lastButtonText?: string;
     hidePrevNext?: boolean;
 };
-declare const _sfc_main: import("vue").DefineComponent<{
+declare const _sfc_main: DefineComponent<{
     modelValue: {
         type: NumberConstructor;
         required: false;
@@ -149,9 +150,9 @@ declare const _sfc_main: import("vue").DefineComponent<{
 }, {
     props: any;
     emit: (event: "update:modelValue", ...args: any[]) => void;
-    innerValue: import("vue").Ref<number>;
-    selected: import("vue").WritableComputedRef<number>;
-    pages: import("vue").ComputedRef<TVuePaginatePage[]>;
+    innerValue: Ref<number>;
+    selected: WritableComputedRef<number>;
+    pages: ComputedRef<TVuePaginatePage[]>;
     handlePageSelected: (newSelected: number) => void;
     prevPage: () => void;
     nextPage: () => void;
@@ -159,7 +160,7 @@ declare const _sfc_main: import("vue").DefineComponent<{
     lastPageSelected: () => boolean;
     selectFirstPage: () => void;
     selectLastPage: () => void;
-}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, "update:modelValue"[], "update:modelValue", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, "update:modelValue"[], "update:modelValue", VNodeProps & AllowedComponentProps & ComponentCustomProps, Readonly<ExtractPropTypes<{
     modelValue: {
         type: NumberConstructor;
         required: false;

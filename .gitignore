@@ -31,6 +31,7 @@ dist/*
 !dist/VuePaginate.d.ts
 !dist/vue-paginate.css
 !dist/vue-paginate.es.js
+!dist/vue-paginate.cjs.js
 !dist/vue-paginate.umd.js
 
 # VitePress

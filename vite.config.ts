@@ -8,6 +8,8 @@ export default () => defineConfig({
   plugins: [
     vue(),
     dts({
+      outputDir: 'types',
+      staticImport: true,
       insertTypesEntry: true,
       cleanVueFileName: true,
       include: ['./src/main.ts', './src/VuePaginate.vue']
@@ -38,7 +40,11 @@ export default () => defineConfig({
       entry: path.resolve(__dirname, '/src/main.ts'),
       fileName: format => `vue-paginate.${ format }.js`,
       name: 'VuePaginate',
-      formats: ['es', 'umd']
+      formats: [
+        'es',
+        'umd',
+        'cjs'
+      ]
     }
   },
   resolve: {

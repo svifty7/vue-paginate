@@ -27,4 +27,4 @@ jobs:
 
       - uses: ncipollo/release-action@v1
         with:
-          artifacts: "dist/vue-paginate.css,dist/vue-paginate.es.js,dist/vue-paginate.umd.js,dist/main.d.ts,dist/VuePaginate.d.ts"
+          artifacts: "dist/vue-paginate.css,dist/vue-paginate.es.js,dist/vue-paginate.cjs.js,dist/vue-paginate.umd.js,dist/main.d.ts,dist/VuePaginate.d.ts"

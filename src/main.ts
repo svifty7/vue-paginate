@@ -1,12 +1,11 @@
 import type { App, Plugin } from 'vue';
 import VuePaginate from '@/VuePaginate.vue';
 
-const VuePaginatePlugin = {
+const VuePaginatePlugin = Object.assign(VuePaginate, {
   install: (app: App) => {
-    // eslint-disable-next-line vue/match-component-file-name
-    app.component('VuePaginate', VuePaginate);
+    app.component(VuePaginate.name, VuePaginate);
   }
-} as Plugin;
+} as Plugin);
 
 export { VuePaginate };
 
