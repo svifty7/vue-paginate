@@ -1,7 +1,7 @@
 {
   "name": "@svifty7/vue-paginate",
   "description": "Vue 3 component to make pagination",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "author": "Nikita Charushin <svifty7@gmail.com> (https://github.com/svifty7)",
   "keywords": [
     "vue",
