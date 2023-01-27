@@ -1,7 +1,5 @@
-import type { App } from 'vue';
+import type { Plugin } from 'vue';
 import VuePaginate from "./VuePaginate";
-declare const _default: {
-    install: (app: App) => void;
-};
-export default _default;
+declare const VuePaginatePlugin: Plugin;
 export { VuePaginate };
+export default VuePaginatePlugin;

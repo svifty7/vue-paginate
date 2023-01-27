@@ -16,11 +16,11 @@ npm install @svifty7/vue-paginate --save
 Register the component
 ```js
 import { createApp } from 'vue';
-import VuePaginate from '@svifty7/vue-paginate';
+import VuePaginatePlugin from '@svifty7/vue-paginate';
 
 const app = createApp();
 
-app.component('vue-paginate', VuePaginate);
+app.component('vue-paginate', VuePaginatePlugin);
 ```
 
 or use directly in component
@@ -30,7 +30,7 @@ or use directly in component
 </template>
 
 <script setup>
-  import VuePaginate from '@svifty7/vue-paginate';
+  import { VuePaginate } from '@svifty7/vue-paginate';
 </script>
 ```
 

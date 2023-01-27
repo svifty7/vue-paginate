@@ -197,7 +197,7 @@
     computed, onBeforeUpdate, ref
   } from 'vue';
 
-  type TPage = {
+  export type TVuePaginatePage = {
     index: number
     content?: number
     selected?: boolean
@@ -205,7 +205,7 @@
     breakView?: boolean
   }
 
-  type TProps = {
+  export type TVuePaginateProps = {
     modelValue?: number
     forcePage?: number
     containerClass?: string
@@ -234,7 +234,7 @@
   }
 
   const props = withDefaults(
-    defineProps<TProps>(),
+    defineProps<TVuePaginateProps>(),
     {
       clickHandler: () => {},
       pageRange: 3,
@@ -264,7 +264,7 @@
   });
 
   const pages = computed(() => {
-    const items: Array<TPage> = [];
+    const items: Array<TVuePaginatePage> = [];
 
     if (props.pageCount <= props.pageRange) {
       for (let index = 0; index < props.pageCount; index++) {

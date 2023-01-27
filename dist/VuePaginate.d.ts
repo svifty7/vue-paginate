@@ -1,9 +1,36 @@
-declare type TPage = {
+export declare type TVuePaginatePage = {
     index: number;
     content?: number;
     selected?: boolean;
     disabled?: boolean;
     breakView?: boolean;
+};
+export declare type TVuePaginateProps = {
+    modelValue?: number;
+    forcePage?: number;
+    containerClass?: string;
+    pageClass?: string;
+    pageLinkClass?: string;
+    prevClass?: string;
+    prevLinkClass?: string;
+    nextClass?: string;
+    nextLinkClass?: string;
+    breakViewClass?: string;
+    breakViewLinkClass?: string;
+    pageCount: number;
+    clickHandler?: Function;
+    pageRange?: number;
+    marginPages?: number;
+    prevText?: string;
+    nextText?: string;
+    breakViewText?: string;
+    activeClass?: string;
+    disabledClass?: string;
+    noLiSurround?: boolean;
+    firstLastButton?: boolean;
+    firstButtonText?: string;
+    lastButtonText?: string;
+    hidePrevNext?: boolean;
 };
 declare const _sfc_main: import("vue").DefineComponent<{
     modelValue: {
@@ -124,7 +151,7 @@ declare const _sfc_main: import("vue").DefineComponent<{
     emit: (event: "update:modelValue", ...args: any[]) => void;
     innerValue: import("vue").Ref<number>;
     selected: import("vue").WritableComputedRef<number>;
-    pages: import("vue").ComputedRef<TPage[]>;
+    pages: import("vue").ComputedRef<TVuePaginatePage[]>;
     handlePageSelected: (newSelected: number) => void;
     prevPage: () => void;
     nextPage: () => void;

@@ -1,4 +1,4 @@
-import { defineComponent as H, ref as E, computed as g, onBeforeUpdate as I, openBlock as u, createElementBlock as d, normalizeClass as a, createElementVNode as w, withKeys as k, renderSlot as v, createTextVNode as f, toDisplayString as r, createCommentVNode as y, Fragment as N, renderList as F, unref as S } from "vue";
+import { defineComponent as H, ref as E, computed as R, onBeforeUpdate as I, openBlock as u, createElementBlock as d, normalizeClass as a, createElementVNode as w, withKeys as k, renderSlot as v, createTextVNode as f, toDisplayString as r, createCommentVNode as y, Fragment as g, renderList as F, unref as S } from "vue";
 const z = ["tabindex"], D = ["tabindex"], M = ["onClick", "onKeyup"], O = ["tabindex"], U = ["tabindex"], j = ["onClick", "onKeyup"], q = /* @__PURE__ */ H({
   __name: "VuePaginate",
   props: {
@@ -31,12 +31,12 @@ const z = ["tabindex"], D = ["tabindex"], M = ["onClick", "onKeyup"], O = ["tabi
   },
   emits: ["update:modelValue"],
   setup(t, { emit: K }) {
-    const l = t, P = E(1), o = g({
-      get: () => l.modelValue || P.value,
+    const l = t, $ = E(1), o = R({
+      get: () => l.modelValue || $.value,
       set: (s) => {
-        P.value = s;
+        $.value = s;
       }
-    }), R = g(() => {
+    }), N = R(() => {
       const s = [];
       if (l.pageCount <= l.pageRange)
         for (let n = 0; n < l.pageCount; n++)
@@ -63,22 +63,22 @@ const z = ["tabindex"], D = ["tabindex"], M = ["onClick", "onKeyup"], O = ["tabi
           e(i);
         let C = 0;
         o.value - n > 0 && (C = o.value - 1 - n);
-        let $ = C + l.pageRange - 1;
-        $ >= l.pageCount && ($ = l.pageCount - 1, C = $ - l.pageRange + 1);
-        for (let i = C; i <= $ && i <= l.pageCount - 1; i++)
+        let P = C + l.pageRange - 1;
+        P >= l.pageCount && (P = l.pageCount - 1, C = P - l.pageRange + 1);
+        for (let i = C; i <= P && i <= l.pageCount - 1; i++)
           e(i);
-        C > l.marginPages && L(C - 1), $ + 1 < l.pageCount - l.marginPages && L($ + 1);
+        C > l.marginPages && L(C - 1), P + 1 < l.pageCount - l.marginPages && L(P + 1);
         for (let i = l.pageCount - 1; i >= l.pageCount - l.marginPages; i--)
           e(i);
       }
       return s.filter((n) => !!n);
     }), x = (s) => {
-      o.value !== s && (P.value = s, K("update:modelValue", s), l.clickHandler(s));
+      o.value !== s && ($.value = s, K("update:modelValue", s), l.clickHandler(s));
     }, V = () => {
       o.value <= 1 || x(o.value - 1);
-    }, m = () => {
+    }, B = () => {
       o.value >= l.pageCount || x(o.value + 1);
-    }, b = () => o.value === 1, c = () => o.value === l.pageCount || l.pageCount === 0, B = () => {
+    }, b = () => o.value === 1, c = () => o.value === l.pageCount || l.pageCount === 0, m = () => {
       o.value <= 1 || x(1);
     }, T = () => {
       o.value >= l.pageCount || x(l.pageCount);
@@ -93,8 +93,8 @@ const z = ["tabindex"], D = ["tabindex"], M = ["onClick", "onKeyup"], O = ["tabi
         key: 0,
         class: a([t.pageLinkClass, b() ? t.disabledClass : ""]),
         tabindex: "0",
-        onClick: n[8] || (n[8] = (e) => B()),
-        onKeyup: n[9] || (n[9] = k((e) => B(), ["enter"]))
+        onClick: n[8] || (n[8] = (e) => m()),
+        onKeyup: n[9] || (n[9] = k((e) => m(), ["enter"]))
       }, [
         v(s.$slots, "firstBtnText", {}, () => [
           f(r(t.firstButtonText), 1)
@@ -111,7 +111,7 @@ const z = ["tabindex"], D = ["tabindex"], M = ["onClick", "onKeyup"], O = ["tabi
           f(r(t.prevText), 1)
         ], !0)
       ], 34)),
-      (u(!0), d(N, null, F(S(R), (e, L) => (u(), d(N, { key: L }, [
+      (u(!0), d(g, null, F(S(N), (e, L) => (u(), d(g, { key: L }, [
         e != null && e.breakView ? (u(), d("a", {
           key: 0,
           class: a([t.pageLinkClass, t.breakViewLinkClass, e != null && e.disabled ? t.disabledClass : ""]),
@@ -136,8 +136,8 @@ const z = ["tabindex"], D = ["tabindex"], M = ["onClick", "onKeyup"], O = ["tabi
         key: 2,
         class: a([t.nextLinkClass, c() ? t.disabledClass : ""]),
         tabindex: "0",
-        onClick: n[12] || (n[12] = (e) => m()),
-        onKeyup: n[13] || (n[13] = k((e) => m(), ["enter"]))
+        onClick: n[12] || (n[12] = (e) => B()),
+        onKeyup: n[13] || (n[13] = k((e) => B(), ["enter"]))
       }, [
         v(s.$slots, "nextBtnText", {}, () => [
           f(r(t.nextText), 1)
@@ -165,8 +165,8 @@ const z = ["tabindex"], D = ["tabindex"], M = ["onClick", "onKeyup"], O = ["tabi
         w("a", {
           class: a(t.pageLinkClass),
           tabindex: b() ? -1 : 0,
-          onClick: n[0] || (n[0] = (e) => B()),
-          onKeyup: n[1] || (n[1] = k((e) => B(), ["enter"]))
+          onClick: n[0] || (n[0] = (e) => m()),
+          onKeyup: n[1] || (n[1] = k((e) => m(), ["enter"]))
         }, [
           v(s.$slots, "firstBtnText", {}, () => [
             f(r(t.firstButtonText), 1)
@@ -188,7 +188,7 @@ const z = ["tabindex"], D = ["tabindex"], M = ["onClick", "onKeyup"], O = ["tabi
           ], !0)
         ], 42, D)
       ], 2)),
-      (u(!0), d(N, null, F(S(R), (e, L) => (u(), d("li", {
+      (u(!0), d(g, null, F(S(N), (e, L) => (u(), d("li", {
         key: L,
         class: a([
           t.pageClass,
@@ -224,8 +224,8 @@ const z = ["tabindex"], D = ["tabindex"], M = ["onClick", "onKeyup"], O = ["tabi
         w("a", {
           class: a(t.nextLinkClass),
           tabindex: c() ? -1 : 0,
-          onClick: n[4] || (n[4] = (e) => m()),
-          onKeyup: n[5] || (n[5] = k((e) => m(), ["enter"]))
+          onClick: n[4] || (n[4] = (e) => B()),
+          onKeyup: n[5] || (n[5] = k((e) => B(), ["enter"]))
         }, [
           v(s.$slots, "nextBtnText", {}, () => [
             f(r(t.nextText), 1)
@@ -252,10 +252,10 @@ const z = ["tabindex"], D = ["tabindex"], M = ["onClick", "onKeyup"], O = ["tabi
 });
 const A = (t, K) => {
   const l = t.__vccOpts || t;
-  for (const [P, o] of K)
-    l[P] = o;
+  for (const [$, o] of K)
+    l[$] = o;
   return l;
-}, G = /* @__PURE__ */ A(q, [["__scopeId", "data-v-b3ff0c92"]]), Q = {
+}, G = /* @__PURE__ */ A(q, [["__scopeId", "data-v-1cbf8445"]]), Q = {
   install: (t) => {
     t.component("VuePaginate", G);
   }
