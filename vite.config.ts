@@ -46,10 +46,5 @@ export default () => defineConfig({
         'cjs'
       ]
     }
-  },
-  resolve: {
-    alias: {
-      '@': path.resolve(__dirname, 'src')
-    }
   }
 });
