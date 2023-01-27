@@ -1,5 +1,6 @@
 {
   "name": "vue-paginate",
+  "description": "Vue 3 component to make pagination",
   "version": "0.0.1",
   "author": {
     "name": "Nikita Charushin",
@@ -8,15 +9,13 @@
   },
   "keywords": [
     "vue",
+    "vue3",
     "paginate",
     "pagination"
   ],
   "license": "MIT",
   "private": false,
   "type": "module",
-  "files": [
-    "dist"
-  ],
   "main": "./dist/vue-paginate.umd.js",
   "module": "./dist/vue-paginate.es.js",
   "exports": {
@@ -47,6 +46,7 @@
   "bugs": {
     "url": "https://github.com/svifty7/vue-paginate/issues"
   },
+  "homepage": "https://svifty7.github.io/vue-paginate/",
   "dependencies": {
     "vue": "^3.2.45"
   },
