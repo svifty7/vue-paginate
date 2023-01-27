@@ -40,6 +40,8 @@ jobs:
         run: npm run build
 
       - uses: ncipollo/release-action@v1
+        with:
+          allowUpdates: true
 
       - name: Release
         run: npm publish --access public
