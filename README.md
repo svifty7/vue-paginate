@@ -20,7 +20,7 @@ import VuePaginatePlugin from '@svifty7/vue-paginate';
 
 const app = createApp();
 
-app.component('vue-paginate', VuePaginatePlugin);
+app.use(VuePaginatePlugin);
 ```
 
 or use directly in component
