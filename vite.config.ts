@@ -10,7 +10,6 @@ export default () => defineConfig({
     vue(),
     dts({
       outputDir: 'types',
-      staticImport: true,
       insertTypesEntry: true,
       cleanVueFileName: true,
       include: ['./src/index.ts', './src/VuePaginate.vue']
@@ -34,7 +33,7 @@ export default () => defineConfig({
       external: ['vue']
     },
     lib: {
-      entry: path.resolve(__dirname, '/src/index.ts'),
+      entry: path.resolve(__dirname, './src/index.ts'),
       fileName: format => `vue-paginate.${ format }.js`,
       name: 'VuePaginate',
       formats: [

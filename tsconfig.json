@@ -1,37 +1,45 @@
 {
   "compilerOptions": {
-    "target": "es2015",
-    "moduleResolution": "node",
-    "skipLibCheck": true,
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "composite": true,
+    "declaration": true,
+    "declarationDir": "./types",
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
+    "importsNotUsedAsValues": "error",
+    "isolatedModules": true,
+    "jsx": "preserve",
     "lib": [
       "ES2016",
       "DOM",
       "DOM.Iterable"
     ],
-    "esModuleInterop": true,
-    "allowJs": true,
-    "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node",
     "noFallthroughCasesInSwitch": true,
     "outDir": "dist",
-    "declaration": true,
-    "declarationDir": "types",
-    "composite": true,
-    "types": ["node"],
-    "baseUrl": ".",
+    "preserveValueImports": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
     "strict": true,
-    "paths": {
-      "@/*": ["./src/*"]
-    },
+    "target": "es2015",
     "typeRoots": [
       "./src/vite-env.d.ts",
       "./node_modules/@types"
-    ]
+    ],
+    "types": [
+      "node",
+      "vite/client"
+    ],
+    "useDefineForClassFields": true
   },
-  "extends": "@vue/tsconfig/tsconfig.web.json",
+  "exclude": [
+    "node_modules"
+  ],
   "include": [
     "vite.config.*",
-    "src/**/*",
     "src/**/*.ts",
     "src/**/*.vue"
   ]
