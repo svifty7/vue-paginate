@@ -1,20 +1,46 @@
 {
-  "extends": "@vue/tsconfig/tsconfig.web.json",
-  "include": ["env.d.ts", "src/**/*", "src/**/*.vue"],
   "compilerOptions": {
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
-    "paths": {
-      "@/*": ["./src/*"]
-    },
+    "composite": true,
+    "declaration": true,
+    "declarationDir": "./types",
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
+    "importsNotUsedAsValues": "error",
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "lib": [
+      "ES2016",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "moduleResolution": "node",
+    "noFallthroughCasesInSwitch": true,
+    "outDir": "dist",
+    "preserveValueImports": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "es2015",
     "typeRoots": [
-      "./src/shims-vue.d.ts",
+      "./src/vite-env.d.ts",
       "./node_modules/@types"
-    ]
+    ],
+    "types": [
+      "node",
+      "vite/client"
+    ],
+    "useDefineForClassFields": true
   },
-
-  "references": [
-    {
-      "path": "./tsconfig.config.json"
-    }
+  "exclude": [
+    "node_modules"
+  ],
+  "include": [
+    "vite.config.*",
+    "src/**/*.ts",
+    "src/**/*.vue"
   ]
 }

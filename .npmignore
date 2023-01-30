@@ -1,5 +1,13 @@
+.git
+.gitignore
+.npmignore
+.github
+.husky
+/docs
+
+src/vite-env.d.ts
+
 # Logs
-logs
 *.log
 npm-debug.log*
 yarn-debug.log*
@@ -7,14 +15,11 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-dist
-types
 node_modules
 .DS_Store
 
 # Editor directories and files
 .vscode
-!.vscode/extensions.json
 .idea
 .fleet
 *.suo
@@ -27,6 +32,14 @@ node_modules
 .env
 *.local
 
-# VitePress
-/docs/.vitepress/cache
-/docs/.vitepress/dist
+# Build
+dist/*
+!dist/vue-paginate.es.js*
+!dist/vue-paginate.cjs.js*
+!dist/vue-paginate.umd.js*
+
+# Types
+types/*
+!types/*.d.ts
+
+

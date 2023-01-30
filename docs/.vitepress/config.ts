@@ -1,5 +1,5 @@
 import { defineConfig } from 'vitepress';
-import { ConfigEnv } from 'vite';
+import type { ConfigEnv } from 'vite';
 
 export default ({ mode }: ConfigEnv) => defineConfig({
   lang: 'en-US',

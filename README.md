@@ -10,17 +10,17 @@ See [Documentation & Demo](https://svifty7.github.io/vue-paginate)
 
 Install the npm package.
 ```bash
-npm install vue-paginate --save
+npm install @svifty7/vue-paginate --save
 ```
 
 Register the component
 ```js
 import { createApp } from 'vue';
-import VuePaginate from 'vue-paginate';
+import VuePaginatePlugin from '@svifty7/vue-paginate';
 
 const app = createApp();
 
-app.component('vue-paginate', VuePaginate);
+app.use(VuePaginatePlugin);
 ```
 
 or use directly in component
@@ -30,7 +30,7 @@ or use directly in component
 </template>
 
 <script setup>
-  import VuePaginate from 'vue-paginate';
+  import { VuePaginate } from '@svifty7/vue-paginate';
 </script>
 ```
 

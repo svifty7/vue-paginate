@@ -192,12 +192,12 @@
   </div>
 </template>
 
-<script lang="tsx" setup>
+<script lang="ts" setup>
   import {
     computed, onBeforeUpdate, ref
   } from 'vue';
 
-  type TPage = {
+  export type TVuePaginatePage = {
     index: number
     content?: number
     selected?: boolean
@@ -205,76 +205,52 @@
     breakView?: boolean
   }
 
-  const props = defineProps({
-    modelValue: Number,
-    forcePage: Number,
-    containerClass: String,
-    pageClass: String,
-    pageLinkClass: String,
-    prevClass: String,
-    prevLinkClass: String,
-    nextClass: String,
-    nextLinkClass: String,
-    breakViewClass: String,
-    breakViewLinkClass: String,
-    pageCount: {
-      type: Number,
-      required: true
-    },
-    clickHandler: {
-      type: Function,
-      default: () => {
-      }
-    },
-    pageRange: {
-      type: Number,
-      default: 3
-    },
-    marginPages: {
-      type: Number,
-      default: 1
-    },
-    prevText: {
-      type: String,
-      default: 'Prev'
-    },
-    nextText: {
-      type: String,
-      default: 'Next'
-    },
-    breakViewText: {
-      type: String,
-      default: '…'
-    },
-    activeClass: {
-      type: String,
-      default: 'active'
-    },
-    disabledClass: {
-      type: String,
-      default: 'disabled'
-    },
-    noLiSurround: {
-      type: Boolean,
-      default: false
-    },
-    firstLastButton: {
-      type: Boolean,
-      default: false
-    },
-    firstButtonText: {
-      type: String,
-      default: 'First'
-    },
-    lastButtonText: {
-      type: String,
-      default: 'Last'
-    },
-    hidePrevNext: {
-      type: Boolean,
-      default: false
+  export type TVuePaginateProps = {
+    modelValue?: number
+    forcePage?: number
+    containerClass?: string
+    pageClass?: string
+    pageLinkClass?: string
+    prevClass?: string
+    prevLinkClass?: string
+    nextClass?: string
+    nextLinkClass?: string
+    breakViewClass?: string
+    breakViewLinkClass?: string
+    pageCount: number
+    clickHandler?: Function
+    pageRange?: number
+    marginPages?: number
+    prevText?: string
+    nextText?: string
+    breakViewText?: string
+    activeClass?: string
+    disabledClass?: string
+    noLiSurround?: boolean
+    firstLastButton?: boolean
+    firstButtonText?: string
+    lastButtonText?: string
+    hidePrevNext?: boolean
+  }
+
+  const props = withDefaults(
+    defineProps<TVuePaginateProps>(),
+    {
+      clickHandler: () => {},
+      pageRange: 3,
+      marginPages: 1,
+      prevText: 'Prev',
+      nextText: 'Next',
+      breakViewText: '…',
+      activeClass: 'active',
+      disabledClass: 'disabled',
+      noLiSurround: false,
+      firstLastButton: false,
+      firstButtonText: 'First',
+      lastButtonText: 'Last',
+      hidePrevNext: false
     }
-  });
+  );
 
   const emit = defineEmits(['update:modelValue']);
 
@@ -288,7 +264,7 @@
   });
 
   const pages = computed(() => {
-    const items: Array<TPage> = [];
+    const items: Array<TVuePaginatePage> = [];
 
     if (props.pageCount <= props.pageRange) {
       for (let index = 0; index < props.pageCount; index++) {
@@ -408,10 +384,3 @@
     }
   });
 </script>
-
-<style lang="scss" scoped>
-  a {
-    cursor: pointer;
-    user-select: none;
-  }
-</style>

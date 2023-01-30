@@ -39,7 +39,7 @@
   <div>Current page: <b>{{ page }}</b></div>
 </template>
 
-<script lang="tsx">
+<script lang="ts">
   import { defineComponent, ref } from 'vue';
   import VuePaginate from '../../../src/VuePaginate.vue';
 
@@ -57,20 +57,16 @@
   });
 </script>
 
-<style lang="scss">
+<style>
   @import "https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/components/menu.min.css";
 
-  .ui {
-    &.pagination {
-      &.menu {
-        background: var(--vp-c-text-1);
+  .ui.pagination.menu {
+    background: var(--vp-c-text-1);
+  }
 
-        .item,
-        .item.active,
-        .item:hover {
-          color: var(--vp-c-bg);
-        }
-      }
-    }
+  .ui.pagination.menu .item,
+  .ui.pagination.menu .item.active,
+  .ui.pagination.menu .item:hover {
+    color: var(--vp-c-bg);
   }
 </style>
